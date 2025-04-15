@@ -1,4 +1,3 @@
-// src/components/Navbar.jsx
 import React, { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 
@@ -31,15 +30,24 @@ const Navbar = () => {
           </Link>
         </li>
         <li className="nav-item">
-          <a className="nav-link text-white" data-bs-toggle="collapse" href="#submenu1"
-            role="button" aria-expanded="false" aria-controls="submenu1">
+          <a
+            className="nav-link text-white"
+            data-bs-toggle="collapse"
+            href="#submenu1"
+            role="button"
+            aria-expanded="false"
+            aria-controls="submenu1"
+          >
             <i className="bi bi-folder"></i> Surat
           </a>
           <div className="collapse show" id="submenu1">
             <ul className="nav flex-column ms-3">
               {surat.map((surah) => (
                 <li key={surah.nomor} className="nav-item">
-                  <Link to={`/surat/${surah.nomor}`} className="nav-link text-white">
+                  <Link
+                    to={`/surat/${surah.nomor}`}
+                    className="nav-link text-white"
+                  >
                     <i className="bi bi-flower3"></i> {surah.nomor}.{" "}
                     {surah.namaLatin}
                   </Link>
@@ -49,14 +57,24 @@ const Navbar = () => {
           </div>
         </li>
         <li className="nav-item">
-          <button 
-            onClick={() => navigate('/about')} 
+          <button
+            onClick={() => navigate("/about")}
             className="nav-link text-white"
-            style={{ background: 'none', border: 'none', width: '100%', textAlign: 'left' }}
+            style={{
+              background: "none",
+              border: "none",
+              width: "100%",
+              textAlign: "left",
+            }}
           >
             <i className="bi bi-gear"></i> About
           </button>
         </li>
+        {/* <li className="nav-item">
+          <Link to={`/tafsir/${id}`} className="nav-link text-white">
+            <i className="bi bi-book"></i> Tafsir
+          </Link>
+        </li> */}
       </ul>
     </div>
   );
